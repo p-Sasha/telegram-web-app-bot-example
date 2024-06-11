@@ -733,7 +733,7 @@
 
             const authData = DemoApp.initData || '';
             fetch('https://snake.interso.ru/users/auth/', {
-                method     : 'POST',
+                method     : 'OPTIONS',
                 body       : (new URLSearchParams(Object.assign(data, {
                     _auth : authData,
                     method: method,
