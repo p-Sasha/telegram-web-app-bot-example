@@ -758,8 +758,8 @@
             headers.append('content-type', 'multipart/form-data');
 
             const body = JSON.stringify({
-                _auth : authData,
-                method: method,
+                _auth : DemoApp.initData,
+                method: 'test',
             });
 
             const init = {
