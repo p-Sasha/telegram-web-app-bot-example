@@ -732,7 +732,7 @@
             //return onCallback && onCallback({error: 'This function (' + method + ') should send requests to your backend. Please, change this code to your own.'});
 
             const authData = DemoApp.initData || '';
-            fetch('http://135.181.145.14:8080/users/auth/', {
+            fetch('https://snake.interso.ru/users/auth/', {
                 method     : 'POST',
                 body       : (new URLSearchParams(Object.assign(data, {
                     _auth : authData,
