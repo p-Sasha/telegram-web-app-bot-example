@@ -342,6 +342,7 @@
     <button onclick="DemoApp.expand();">Expand Webview</button>
     <button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
     <button onclick="DemoApp.checkInitData();">checkInitData</button>
+    <button onclick="DemoApp.tester();">Tester</button>
     <input type="text" placeholder="Input text in regular input..." id="regular_field"/>
     <div
             class="input"
@@ -749,6 +750,34 @@
             }).catch(function (error) {
                 onCallback && onCallback({error: 'Server error'});
             });
+        },
+
+        tester() {
+            const headers = new Headers();
+            headers.append('Cookie', 'XDEBUG_SESSION=PHPSTORM;');
+            headers.append('content-type', 'multipart/form-data');
+
+            const body = JSON.stringify({
+                _auth : authData,
+                method: method,
+            });
+
+            const init = {
+                method: 'POST',
+                headers,
+                body
+            };
+
+            fetch('https://snake.interso.ru/users/auth/', init)
+                .then((response) => {
+                    return response.json(); // or .text() or .blob() ...
+                })
+                .then((text) => {
+                    // text is the response body
+                })
+                .catch((e) => {
+                    // error in e.message
+                });
         }
     }
 
