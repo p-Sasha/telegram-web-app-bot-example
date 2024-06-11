@@ -773,10 +773,11 @@
                     return response.json(); // or .text() or .blob() ...
                 })
                 .then((text) => {
-                    // text is the response body
+                    console.log(text);
                 })
                 .catch((e) => {
-                    // error in e.message
+                    error in e.message
+                    console.log(e.message);
                 });
         }
     }
